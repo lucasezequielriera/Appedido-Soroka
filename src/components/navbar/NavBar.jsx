@@ -3,22 +3,22 @@ import CartWidget from "../cart-widget/CartWidget";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
-const Navbar = (props) => {
+const Navbar = ({brand, categories}) => {
   return (
-    <div className="navbar">
+    <header className="navbar">
       <a href="/" className="brand-logo">
-        {props.brand}
+        {brand}
       </a>
       <div className="navbar-right">
         <Dropdown
           className="nav-dropdown"
-          options={props.categories}
-          value={props.categories[0]}
+          options={categories}
+          value={categories[0]}
           placeholder="Select an option"
         />
         <CartWidget />
       </div>
-    </div>
+    </header>
   );
 };
 
